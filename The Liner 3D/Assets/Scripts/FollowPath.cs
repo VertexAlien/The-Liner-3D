@@ -48,9 +48,11 @@ public class FollowPath : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Color Change"))
         {
-            SetColor(this.gameObject);
+            SetColor();
             Destroy(other.gameObject);
         }
+
+        
 
 
         else if (other.tag != this.tag)
@@ -75,7 +77,7 @@ public class FollowPath : MonoBehaviour
     
     }
 
-    void SetColor(GameObject gameObject)
+    void SetColor()
     {
         int index = Random.Range(0, 3);
 
@@ -87,19 +89,19 @@ public class FollowPath : MonoBehaviour
         switch(index)
         {
             case 0:
-                gameObject.tag = "Red";
+                this.tag = "Red";
                 rend.sharedMaterial = materials[0];
                 ColorNo = 0;
                 Debug.Log("Red");
                 break;
             case 1:
-                gameObject.tag = "Blue";
+                this.tag = "Blue";
                 rend.sharedMaterial = materials[1];
                 ColorNo = 1;
                 Debug.Log("Blue");
                 break;
             case 2:
-                gameObject.tag = "Yellow";
+                this.tag = "Yellow";
                 rend.sharedMaterial = materials[2];
                 ColorNo = 2;
                 Debug.Log("Yellow");

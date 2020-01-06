@@ -24,7 +24,13 @@ public class CameraFollow : MonoBehaviour
         BackgroundColorChange();
 
         
+
+
     }
+
+    
+
+    
 
     void BackgroundColorChange()
     {
