@@ -21,7 +21,7 @@ public class CameraFollow : MonoBehaviour
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothspeed * Time.deltaTime);
         transform.position = smoothedPosition;
 
-        BackgroundColorChange();
+        //BackgroundColorChange();
 
         
 
