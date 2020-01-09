@@ -12,16 +12,20 @@ public class FollowPath : MonoBehaviour
     public float force = 100f;
     public Material[] materials;
     public int ColorNo;
+    
 
 
     Material S_material;
     float distanceTravelled;
     Renderer rend;
+    Animator anim;
+    
 
 
     void Start()
     {
         rend = GetComponent<Renderer>();
+        anim = GetComponent<Animator>();
         transform.position = pathCreator.path.GetPoint(0);
     }
 
@@ -33,8 +37,7 @@ public class FollowPath : MonoBehaviour
         {
             Movement();
         }
-        
-        
+
     }
 
     void Movement()
@@ -52,9 +55,14 @@ public class FollowPath : MonoBehaviour
             Destroy(other.gameObject);
         }
 
+        else if(other.tag == "Finish")
+        {
+            anim.SetBool("Spin", true);
+            anim.enabled = true;
+
+        }
+
         
-
-
         else if (other.tag != this.tag)
         {
             
@@ -92,19 +100,16 @@ public class FollowPath : MonoBehaviour
                 this.tag = "Red";
                 rend.sharedMaterial = materials[0];
                 ColorNo = 0;
-                Debug.Log("Red");
                 break;
             case 1:
                 this.tag = "Blue";
                 rend.sharedMaterial = materials[1];
                 ColorNo = 1;
-                Debug.Log("Blue");
                 break;
             case 2:
                 this.tag = "Yellow";
                 rend.sharedMaterial = materials[2];
                 ColorNo = 2;
-                Debug.Log("Yellow");
                 break;
                 
         }
@@ -126,4 +131,5 @@ public class FollowPath : MonoBehaviour
         }
     }
 
+    
 }
