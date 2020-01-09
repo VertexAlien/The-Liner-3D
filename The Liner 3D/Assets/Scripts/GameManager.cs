@@ -6,9 +6,19 @@ public class GameManager : MonoBehaviour
 {
     public GameObject RestartButton;
     public GameObject StartText;
+    public GameObject EndPanel;
 
     bool gameHasEnded = false;
     public float restartDelay = 1f;
+
+
+    private void Update()
+    {
+        if (Input.touchCount > 0 || Input.GetMouseButtonDown(0))
+        {
+            startButtonDeactive();
+        }
+    }
 
     public void EndGame()
     {
@@ -19,15 +29,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        if(Input.touchCount > 0 || Input.GetMouseButtonDown(0))
-        {
-            startButtonDeactive();
-        }
-    }
-
-
+    
     private void restartButtonActive()
     {
         RestartButton.SetActive(true);
@@ -36,6 +38,11 @@ public class GameManager : MonoBehaviour
     public void startButtonDeactive()
     {
         StartText.SetActive(false);
+    }
+
+    public void LevelEnd()
+    {
+        EndPanel.SetActive(true);
     }
 
 

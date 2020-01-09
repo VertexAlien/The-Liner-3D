@@ -18,14 +18,12 @@ public class FollowPath : MonoBehaviour
     Material S_material;
     float distanceTravelled;
     Renderer rend;
-    Animator anim;
     
 
 
     void Start()
     {
         rend = GetComponent<Renderer>();
-        anim = GetComponent<Animator>();
         transform.position = pathCreator.path.GetPoint(0);
     }
 
@@ -57,8 +55,7 @@ public class FollowPath : MonoBehaviour
 
         else if(other.tag == "Finish")
         {
-            anim.SetBool("Spin", true);
-            anim.enabled = true;
+            FindObjectOfType<GameManager>().LevelEnd();
 
         }
 
