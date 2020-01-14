@@ -15,15 +15,17 @@ public class CameraFollow : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.LookAt(player);
+        //transform.LookAt(player);
 
-        Vector3 desiredPosition = player.position + offset;
+        /*Vector3 desiredPosition = player.position + offset;
         Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition, smoothspeed * Time.deltaTime);
-        transform.position = smoothedPosition;
+        transform.position = smoothedPosition;*/
 
+        transform.position = player.position + offset;
+        
         //BackgroundColorChange();
 
-        
+
 
 
     }
