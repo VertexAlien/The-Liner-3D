@@ -1810,6 +1810,36 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player_Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 4934246971511221442, guid: 31bf7c4c72ac56b4b8149b8c89af5a32,
+        type: 3}
+      propertyPath: m_Parameters.alignment
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934246971511221442, guid: 31bf7c4c72ac56b4b8149b8c89af5a32,
+        type: 3}
+      propertyPath: m_Parameters.widthCurve.m_Curve.Array.data[0].value
+      value: 0.98734176
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934246971511221443, guid: 31bf7c4c72ac56b4b8149b8c89af5a32,
+        type: 3}
+      propertyPath: offset.y
+      value: -0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934246971511222077, guid: 31bf7c4c72ac56b4b8149b8c89af5a32,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934246971511222077, guid: 31bf7c4c72ac56b4b8149b8c89af5a32,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 4934246971511222077, guid: 31bf7c4c72ac56b4b8149b8c89af5a32,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31bf7c4c72ac56b4b8149b8c89af5a32, type: 3}
 --- !u!4 &5006512736564719140 stripped

@@ -6,6 +6,7 @@ public class Trail_line : MonoBehaviour
 {
     public GameObject player;
     public Material[] materials;
+    public Vector3 offset;
 
     Renderer rend;
 
@@ -26,7 +27,7 @@ public class Trail_line : MonoBehaviour
 
     void Movement()
     {
-        transform.position = player.transform.position;
+        transform.position = player.transform.position + offset;
     }
 
     void ColorChange()
