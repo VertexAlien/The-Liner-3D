@@ -45,8 +45,12 @@ public class GameManager : MonoBehaviour
         EndPanel.SetActive(true);
     }
 
+    public void nextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 
-    public void Restart()
+    void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

@@ -27,7 +27,6 @@ public class Trail_line : MonoBehaviour
     void Movement()
     {
         transform.position = player.transform.position;
-        transform.rotation = player.transform.rotation;
     }
 
     void ColorChange()
