@@ -35,7 +35,6 @@ public class FollowPath : MonoBehaviour
         {
             Movement();
         }
-
     }
 
     void Movement()
@@ -62,15 +61,14 @@ public class FollowPath : MonoBehaviour
         
         else if (other.tag != this.tag)
         {
-            
             ChooseBrokenCube();
 
             Collider[] colliders = Physics.OverlapSphere(transform.position, radius);
 
-            foreach(Collider nearByObject in colliders)
+            foreach (Collider nearByObject in colliders)
             {
                 Rigidbody rb = nearByObject.GetComponent<Rigidbody>();
-                if(rb != null)
+                if (rb != null)
                 {
                     rb.AddExplosionForce(force, transform.position, radius);
                 }
@@ -81,6 +79,7 @@ public class FollowPath : MonoBehaviour
         }
     
     }
+
 
     void SetColor()
     {

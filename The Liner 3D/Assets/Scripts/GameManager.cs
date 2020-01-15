@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
     public GameObject RestartButton;
     public GameObject StartText;
     public GameObject EndPanel;
+    public GameObject Timer;
 
     bool gameHasEnded = false;
     public float restartDelay = 1f;
@@ -38,11 +39,14 @@ public class GameManager : MonoBehaviour
     public void startButtonDeactive()
     {
         StartText.SetActive(false);
+        Timer.SetActive(true);
     }
 
     public void LevelEnd()
     {
         EndPanel.SetActive(true);
+        Timer.SetActive(false);
+
     }
 
     public void nextLevel()
@@ -50,7 +54,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    void Restart()
+    public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }

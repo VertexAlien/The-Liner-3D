@@ -8,6 +8,7 @@ TagManager:
   - Blue
   - Yellow
   - Color Change
+  - TimeUp
   layers:
   - Default
   - TransparentFX
