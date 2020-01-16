@@ -30,7 +30,7 @@ public class Timer : MonoBehaviour
         if (timeleft > 0)
         {
             timeleft -= 1 * Time.deltaTime;
-            if(timeleft <= 7 && timeleft >= 4)
+            if(timeleft < 7 && timeleft > 3)
             {
                 timetext.color = Color.yellow;
                 timerBar.color = Color.yellow;

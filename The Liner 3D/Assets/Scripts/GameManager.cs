@@ -45,7 +45,7 @@ public class GameManager : MonoBehaviour
     public void LevelEnd()
     {
         EndPanel.SetActive(true);
-        Timer.SetActive(false);
+        Destroy(Timer);
 
     }
 
