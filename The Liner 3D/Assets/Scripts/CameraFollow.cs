@@ -6,7 +6,7 @@ public class CameraFollow : MonoBehaviour
     public float smoothspeed = 0.125f;
     public Vector3 offset;
 
-    Camera camera;
+    private Camera camera;
 
     private void Start()
     {

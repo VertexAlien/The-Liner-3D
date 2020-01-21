@@ -34,6 +34,7 @@ public class GameManager : MonoBehaviour
     private void restartButtonActive()
     {
         RestartButton.SetActive(true);
+        Destroy(Timer);
     }
     
     public void startButtonDeactive()

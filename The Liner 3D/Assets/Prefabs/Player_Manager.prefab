@@ -416,11 +416,6 @@ PrefabInstance:
         type: 3}
     - target: {fileID: 6118355373951428076, guid: 0103318d70dc4d544b7e386c6addebb5,
         type: 3}
-      propertyPath: speed
-      value: 1.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 6118355373951428076, guid: 0103318d70dc4d544b7e386c6addebb5,
-        type: 3}
       propertyPath: materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 412de350eb2c66545a83ef192bd9300a, type: 2}
@@ -434,6 +429,16 @@ PrefabInstance:
       propertyPath: materials.Array.data[2]
       value: 
       objectReference: {fileID: 2100000, guid: 04cd6eb399a245149a8407adad920098, type: 2}
+    - target: {fileID: 6118355373951428076, guid: 0103318d70dc4d544b7e386c6addebb5,
+        type: 3}
+      propertyPath: FlashEffectAnim
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6118355373951428076, guid: 0103318d70dc4d544b7e386c6addebb5,
+        type: 3}
+      propertyPath: pathCreator
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0103318d70dc4d544b7e386c6addebb5, type: 3}
 --- !u!1 &1193793314118145681 stripped

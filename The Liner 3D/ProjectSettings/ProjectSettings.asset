@@ -20,7 +20,7 @@ PlayerSettings:
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
-  m_SplashScreenAnimation: 1
+  m_SplashScreenAnimation: 0
   m_SplashScreenLogoStyle: 1
   m_SplashScreenDrawMode: 0
   m_SplashScreenBackgroundAnimationZoom: 1
@@ -645,7 +645,7 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   cloudProjectId: b36535ba-d32c-4453-9a36-aa3ed511488d
   framebufferDepthMemorylessMode: 0
-  projectName: The Liner 3D
+  projectName: Color The Lines 3D
   organizationId: vertex-alien
   cloudEnabled: 0
   enableNativePlatformBackendsForNewInputSystem: 0

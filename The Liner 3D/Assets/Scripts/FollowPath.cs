@@ -4,27 +4,30 @@ using PathCreation;
 
 public class FollowPath : MonoBehaviour
 {
-    public GameObject[] ShatteredPlayer;
-    public PathCreator pathCreator;
-    public EndOfPathInstruction end;
-    public float speed = 5;
-    public float radius = 5f;
-    public float force = 100f;
-    public Material[] materials;
-    public int ColorNo;
+    [SerializeField] GameObject[] ShatteredPlayer;
+    [SerializeField] Animator FlashEffectAnim;
+    [SerializeField] PathCreator pathCreator;
+    [SerializeField] EndOfPathInstruction end;
+    [SerializeField] float speed = 5;
+    [SerializeField] float radius = 5f;
+    [SerializeField] float force = 100f;
+    [SerializeField] Material[] materials;
+    [SerializeField] int ColorNo;
+    
     
 
 
-    Material S_material;
-    float distanceTravelled;
-    Renderer rend;
-    
+    private Material S_material;
+    private float distanceTravelled;
+    private Renderer rend;
+    private Vector3 cubeSize;
 
 
     void Start()
     {
         rend = GetComponent<Renderer>();
         transform.position = pathCreator.path.GetPoint(0);
+        cubeSize = transform.localScale;
     }
 
     
@@ -48,6 +51,7 @@ public class FollowPath : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Color Change"))
         {
+            FlashEffectAnim.Play("FlashEffect");
             SetColor();
             Destroy(other.gameObject);
         }
@@ -55,7 +59,6 @@ public class FollowPath : MonoBehaviour
         else if(other.tag == "Finish")
         {
             FindObjectOfType<GameManager>().LevelEnd();
-
         }
 
         
@@ -109,21 +112,27 @@ public class FollowPath : MonoBehaviour
                 break;
                 
         }
+
     }
 
     void ChooseBrokenCube()
     {
         if(this.tag == "Red")
         {
-            Instantiate(ShatteredPlayer[0], transform.position, transform.rotation);
+            GameObject brokenCube = Instantiate(ShatteredPlayer[0], transform.position, transform.rotation)as GameObject;
+            brokenCube.transform.localScale = cubeSize/2;
+
         }
         else if (this.tag == "Blue")
         {
-            Instantiate(ShatteredPlayer[1], transform.position, transform.rotation);
+            GameObject brokenCube = Instantiate(ShatteredPlayer[1], transform.position, transform.rotation)as GameObject;
+            brokenCube.transform.localScale = cubeSize/2;
+
         }
         else if (this.tag == "Yellow")
         {
-            Instantiate(ShatteredPlayer[2], transform.position, transform.rotation);
+            GameObject brokenCube = Instantiate(ShatteredPlayer[2], transform.position, transform.rotation)as GameObject;
+            brokenCube.transform.localScale = cubeSize/2;
         }
     }
 

@@ -1330,7 +1330,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9186565339986709547}
   m_Layer: 0
-  m_Name: Player_Broken
+  m_Name: Player_Broken Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1345,7 +1345,7 @@ Transform:
   m_GameObject: {fileID: 5271011851042569784}
   m_LocalRotation: {x: 0.20500205, y: -0.20500205, z: -0.6767379, w: 0.6767379}
   m_LocalPosition: {x: -0.1, y: 0, z: 0.61}
-  m_LocalScale: {x: 0.06, y: 0.06, z: 0.06}
+  m_LocalScale: {x: 0.03, y: 0.03, z: 0.03}
   m_Children:
   - {fileID: 2155236158452374213}
   - {fileID: 4372556236826852169}
