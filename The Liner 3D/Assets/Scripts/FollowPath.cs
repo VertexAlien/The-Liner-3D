@@ -13,14 +13,15 @@ public class FollowPath : MonoBehaviour
     [SerializeField] float force = 100f;
     [SerializeField] Material[] materials;
     [SerializeField] int ColorNo;
-    
-    
 
 
+
+    bool isMoving = false;
     private Material S_material;
     private float distanceTravelled;
     private Renderer rend;
     private Vector3 cubeSize;
+    private string playerIndex ;
 
 
     void Start()
@@ -28,19 +29,54 @@ public class FollowPath : MonoBehaviour
         rend = GetComponent<Renderer>();
         transform.position = pathCreator.path.GetPoint(0);
         cubeSize = transform.localScale;
+
+        SelectPlayer();
     }
 
     
 
     void Update()
     {
-        if (Input.touchCount > 0 || Input.GetMouseButton(0))
+        if (isMoving)
         {
             Movement();
         }
     }
 
-    void Movement()
+    void SelectPlayer()
+    {
+        playerIndex = PlayerPrefs.GetString("choosenplayer");
+
+        foreach (Transform child in transform)
+        {
+            if (child.name == playerIndex)
+            {
+                rend.enabled = false;
+                child.gameObject.SetActive(true);
+            }
+            else if(playerIndex == "CUBE")
+            {
+                rend.enabled = true;
+            }
+            else
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
+    }
+
+    public void isMovable()
+    {
+        isMoving = true;
+    }
+
+    public void isNotMovable()
+    {
+        isMoving = false;
+    }
+
+    private void Movement()
     {
         distanceTravelled += speed * Time.deltaTime;
         transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled, end);
